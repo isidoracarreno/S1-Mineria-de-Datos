@@ -1,15 +1,20 @@
-# Solemne 1
+# **Solemne 1**
 # Análisis de Datos Financieros: S&P 500 vs. Oro (2019-2026)
 
 ### 1. Introducción y Contexto
 Este pequeño proyecto presenta un análisis comparativo entre el índice bursátil S&P 500 y el oro, un activo considerado tradicionalmente como refugio de valor. El objetivo principal es evaluar la relación de riesgo (volatilidad), correlación y rendimiento acumulado de ambos activos durante un período que abarca desde inicios de 2019 hasta principios de 2026.
 
+Mi hipótesis inicial era que el Oro presentaría una estabilidad superior durante la caída de marzo de 2020, actuando como un 'seguro', mientras que las acciones tendrían un crecimiento mayor al final del período.
+
 ### 2. Obtención y Limpieza de Datos
 Los datos fueron obtenidos directamente de la API de Yahoo Finance para los tickers SPY (S&P 500 ETF Trust) y GLD (SPDR Gold Shares).
+
 El flujo de trabajo incluyó:
 1. Descarga de los precios de cierre diarios.
 2. Manejo de valores nulos.
 3. Transformación de variables (normalización y cálculo de retornos diarios).
+
+El dataset final mostró 0 valores nulos y una estructura consistente, lo que indica una alta confiabilidad en la fuente de datos. El rango temporal capturado es idóneo para observar eventos de 'cisne negro' como la pandemia
 
 ## 3. EDA y Visualización
 ### Rendimiento Acumulado: ¿Qué pasó con el precio del oro cuando las acciones cayeron por la pandemia en marzo de 2020?
@@ -39,3 +44,8 @@ Basado en el análisis de los 4 gráficos generados, se pueden extraer las sigui
 2. El histograma y el boxplot confirman que el S&P 500 es el activo intrínsecamente más volátil y arriesgado día a día.
 3. El hallazgo más impactante es que, a pesar de la fuerte recuperación de las acciones post-2020, el oro terminó el período (2019-2026) con un rendimiento superior, impulsado por una subida hiperbólica final.
 4. La correlación cercana a cero (0.10) ratifica que el oro es un diversificador de portafolio efectivo.
+
+## 5. Decisiones Descartadas
+
+1. Visualización: Se descartó el uso de un gráfico de torta para comparar rendimientos, ya que no permite visualizar la evolución temporal ni la volatilidad diaria, que eran los objetivos centrales.
+2. Datos: Se consideró cruzar estos datos con el Índice de Precios al Consumidor (IPC), pero se descartó debido a que el IPC tiene una frecuencia mensual, lo que generaba una pérdida de resolución al compararlo con los datos diarios de mercado.
